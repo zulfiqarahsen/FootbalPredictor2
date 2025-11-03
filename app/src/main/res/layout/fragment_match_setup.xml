@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true"
+    tools:context=".ui.fragments.MatchSetupFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Match Setup"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLeagueLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Select League:"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <LinearLayout
+            android:id="@+id/leagueContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/primary"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLeagueLabel">
+
+            <ImageView
+                android:id="@+id/ivLeagueIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop" />
+
+            <Spinner
+                android:id="@+id/spinnerLeague"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvHomeTeamLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Home Team:"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/leagueContainer" />
+
+        <LinearLayout
+            android:id="@+id/homeTeamContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/primary"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHomeTeamLabel">
+
+            <ImageView
+                android:id="@+id/ivHomeTeamIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop" />
+
+            <Spinner
+                android:id="@+id/spinnerHomeTeam"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvAwayTeamLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Away Team:"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/homeTeamContainer" />
+
+        <LinearLayout
+            android:id="@+id/awayTeamContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/primary"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAwayTeamLabel">
+
+            <ImageView
+                android:id="@+id/ivAwayTeamIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop" />
+
+            <Spinner
+                android:id="@+id/spinnerAwayTeam"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStartSimulation"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            android:text="▶ Start Simulation"
+            android:textSize="18sp"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/awayTeamContainer" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:text="← Back"
+            android:textSize="16sp"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnStartSimulation"
+            style="@style/Widget.Material3.Button.OutlinedButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
