@@ -58,11 +58,16 @@ class DeviceInfoProvider(private val context: Context) {
         val scale = batteryIntent?.getIntExtra(BatteryManager.EXTRA_SCALE, -1) ?: -1
         
         if (level == -1 || scale == -1) {
-            return "0.0"
+            return "0"
         }
         
         val batteryPct = level / scale.toFloat()
-        return String.format("%.2f", batteryPct)
+        return if (batteryPct == 1.0f) {
+            "1"
+        } else {
+            String.format("%.2f", batteryPct)
+        }
     }
 }
+
 

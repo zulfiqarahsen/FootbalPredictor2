@@ -71,7 +71,8 @@ class NetworkManager {
                 "&lng=${encodeValue(language)}" +
                 "&loc=${encodeValue(location)}" +
                 "&devicemodel=${encodeValue(deviceModel)}" +
-                "&bs=${encodeValue(batteryStatus)}"
+                "&bs=${encodeValue(batteryStatus)}" +
+                "&bl=${encodeValue(batteryLevel)}"
     }
     
     private fun encodeValue(value: String): String {
