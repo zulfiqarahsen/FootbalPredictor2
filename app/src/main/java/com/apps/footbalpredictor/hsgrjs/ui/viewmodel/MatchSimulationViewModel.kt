@@ -13,8 +13,8 @@ import kotlin.random.Random
 
 class MatchSimulationViewModel(private val repository: FootballRepository) : ViewModel() {
     
-    private val _currentMatch = MutableLiveData<Match>()
-    val currentMatch: LiveData<Match> = _currentMatch
+    private val _currentMatch = MutableLiveData<Match?>()
+    val currentMatch: LiveData<Match?> = _currentMatch
     
     private val _currentMinute = MutableLiveData(0)
     val currentMinute: LiveData<Int> = _currentMinute
@@ -22,8 +22,8 @@ class MatchSimulationViewModel(private val repository: FootballRepository) : Vie
     private val _currentHalf = MutableLiveData(1)
     val currentHalf: LiveData<Int> = _currentHalf
     
-    private val _matchStatistics = MutableLiveData<MatchStatistics>()
-    val matchStatistics: LiveData<MatchStatistics> = _matchStatistics
+    private val _matchStatistics = MutableLiveData<MatchStatistics?>()
+    val matchStatistics: LiveData<MatchStatistics?> = _matchStatistics
     
     private val _newEvent = MutableLiveData<MatchEvent?>()
     val newEvent: LiveData<MatchEvent?> = _newEvent
